@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./common/layout/layout";
-import { Kids } from "./common/pages/kids/kids";
-import { Men } from "./common/pages/men/men";
-import { Women } from "./common/pages/women/women";
+import { Kids } from "./pages/kids/kids";
+import { Men } from "./pages/men/men";
+import { Women } from "./pages/women/women";
 
 function App() {
   return (

@@ -4,9 +4,9 @@ import { Header } from "../header/header";
 
 export const Layout = ({children}) => {
     return (
-        <>
-        <Header />
-        <main>{children}</main>
-        </>
+        <div className="page">
+            <Header />
+            <main>{children}</main>
+        </div>
     )
 }

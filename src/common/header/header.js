@@ -3,7 +3,7 @@ import {
     Link
   } from "react-router-dom";
 import './header.scss';
-import logoIMG from '../images/svg 19.png';
+import logoIMG from '../images/Group.png';
 import arrow from '../images/Vector.png';
 import dollar from '../images/$.png';
 import basket from '../images/basket.png';
@@ -17,7 +17,7 @@ export const Header = () => {
                     <Link className="navigation_item" to="/men">men</Link>
                     <Link className="navigation_item" to="/kids">kids</Link>
                 </nav>
-                <Link className="logo" to="/women">
+                <Link className="logo" to="/">
                     <img className="img_logo" src={logoIMG} alt="label" />
                 </Link>
                   
