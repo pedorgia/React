@@ -3,13 +3,6 @@
     margin: 0;
 }
 
-.page {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 30px;
-    padding-bottom: 190px;
-}
-
 .menu {
     display: flex;
     justify-content: space-between;
@@ -42,14 +35,11 @@
     height: 100%;
     margin-right: 30px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navigation_item:last-child {
     margin-right: 0;
-}
-
-.img_logo {
-    margin: 10px 8px;
 }
 
 .navigation_item:hover {

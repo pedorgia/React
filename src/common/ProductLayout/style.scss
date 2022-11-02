@@ -1,0 +1,13 @@
+.products_layout {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 100px 60px;
+    padding-bottom: 30px;
+}
+
+.category_name {
+    position: relative;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
