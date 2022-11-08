@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import logoIMG from '../Images/Group.png';
-import basket from '../Images/basket.png';
-//import Select from 'react-select';
 import { AppContext } from '../../state/App.context';
 import { Select } from './Selector';
 import { UserBag } from './UserBag';
@@ -11,8 +9,6 @@ import { UserBag } from './UserBag';
 export const Header = () => {
   const { currentCurrency, allCurrencies, setCurrentCurrency } =
     useContext(AppContext);
-
-  const [isBagOpened, setIsBagOpened] = useState(false);
 
   return (
     <header className='menu'>
@@ -55,21 +51,10 @@ export const Header = () => {
             changeCurrentCurrency={setCurrentCurrency}
           />
         </button>
-        <button
-          className='profile_button'
-          onClick={() => setIsBagOpened(!isBagOpened)}
-        >
-          <img
-            src={basket}
-            alt='basket'
-            width='20px'
-            height='20px'
-          />
-        </button>
-        {isBagOpened ? <UserBag /> : null}
+        <div className='basket_button'>
+          <UserBag />
+        </div>
       </div>
     </header>
   );
 };
-
-//style="margin-left: 8px"

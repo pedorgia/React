@@ -7,63 +7,68 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
 
-.logo {
-    width: 35px;
-    height: 30px;
-}
+    .navigation {
+        width: 65px;
+        height: 20px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+    
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+    
+        height: 50px;
 
-.navigation {
-    width: 65px;
-    height: 20px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
+        .navigation_item {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin-right: 30px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .navigation_item:last-child {
+            margin-right: 0;
+        }
+        
+        .navigation_item:hover {
+            color: #5ECE7B;
+            border-bottom: #5ECE7B 2px solid;
+        }
+    }
+    
+    .logo {
+        width: 35px;
+        height: 30px;
+    }
 
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
+    .profile {
+        display: flex;
 
-    height: 50px;
-}
+        .profile_button {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+            background-color: white;
+            position: relative;
+            margin-right: 15px;
+        }
+        
+        // .profile_button, .basket_button :hover {
+        //     cursor: pointer;
+        // }
 
-.navigation_item {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-right: 30px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.navigation_item:last-child {
-    margin-right: 0;
-}
-
-.navigation_item:hover {
-    color: #5ECE7B;
-    border-bottom: #5ECE7B 2px solid;
-}
-
-.profile {
-    display: flex;
-}
-
-.profile_button {
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    background-color: white;
-}
-
-.profile_button:first-child {
-    margin-left: 0;
-}
-
-.profile_button:hover {
-    cursor: pointer;
+        .basket_button {
+            display: flex;
+            border: none;
+            background-color: white;
+            position: relative;
+        }      
+    }
 }

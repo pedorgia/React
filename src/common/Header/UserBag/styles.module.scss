@@ -1,0 +1,136 @@
+@import './variables.scss';
+
+.basket {
+    position: relative;
+    z-index: 999;
+    
+    .basket_img{
+        background-color: white;
+        border: none;
+        position: relative;
+        cursor: pointer;
+
+        .circle {
+            width: $circle-basket-info-size;
+            height: $circle-basket-info-size;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+    }
+    .bag {
+        display: block;
+        position: absolute;
+        cursor: default;
+    
+        right: 0;
+        width: 365px;
+        padding: 20px;
+        border: 2px black solid;
+        background-color: #fff;
+
+        .bag_header{
+            margin-bottom: $header-footer-margin;
+        }
+
+        .bag_items {
+            max-height: 440px;
+            overflow-y: visible;
+            overflow: auto;
+
+            .one_product {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+                .bag_info {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 200px;
+                    padding-right: 10px;
+
+                    .description {
+                        background-color: #fff;
+                        z-index: 2;
+                        max-width: 200px;
+                        height: 300px;
+
+                        .product_price {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .actions {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 150px;
+
+                        .remove_button, .add_button {
+                            height: $add-remove-button-size;
+                            width: $add-remove-button-size;
+                            background-color: white;
+                            border: 1px black solid;
+                            cursor: pointer;
+                        }
+
+                        .bag_count {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                .main_img {
+                    padding-right: 15px;
+
+                    .product_img {
+                        max-height: 200px;
+                        max-width: 100px;
+                        height: auto;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .bag_footer {
+            margin-top: $header-footer-margin;
+
+            .total_price {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .action_button{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+
+                .view_bag, .checkout {
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    height: 25px;
+                    width: 110px;
+                    margin: 5px;
+                }
+                
+                .view_bag {
+                    border: 1px solid black;
+                    color: black;
+                    background-color: white;
+                }
+                
+                .checkout {
+                    border: none;
+                    color: white;
+                    background-color:#5ECE7B;
+                }
+            }
+        }
+    }
+}

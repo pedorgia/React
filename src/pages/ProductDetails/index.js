@@ -19,13 +19,10 @@ export const ProductDetails = () => {
     },
   });
 
-  const { attributes, brand, gallery, name, description } = data
-    ? data.product
-    : [];
+  const { attributes, brand, gallery, name, description, prices, inStock } =
+    data ? data.product : [];
 
   const [imgIndex, setImgIndex] = useState(0);
-
-  //console.log(selectedAttributes);
 
   const { getProductPrice } = useContext(AppContext);
 
@@ -59,42 +56,16 @@ export const ProductDetails = () => {
 
   const addToCart = () => {
     const newItem = {
+      gallery: gallery,
       brand: brand,
       name: name,
+      allAttributes: attributes,
       attributes: selectedAttributes,
+      prices: prices,
       count: 1,
     };
     addProductToBag(newItem);
   };
-
-  //   const compareTwoAttrArray = (arr1, arr2) => {
-  //     return arr1.find((item) => {
-  //       if (
-  //         !arr2.includes({
-  //           id: item.id,
-  //           value: item.id,
-  //         })
-  //       )
-  //         return false;
-  //       else return true;
-  //     });
-  //   };
-
-  //   const arr1 = [
-  //     {
-  //       id: 'Color',
-  //       value: 'blue',
-  //     },
-  //   ];
-
-  //   const arr2 = [
-  //     {
-  //       id: 'Color',
-  //       value: 'blue',
-  //     },
-  //   ];
-
-  //   console.log('compare equal--', compareTwoAttrArray(arr1, arr2));
 
   if (error) {
     console.log('error----', error);
@@ -139,12 +110,16 @@ export const ProductDetails = () => {
             <p> price: </p>
             {symbol} {amount}
           </div>
-          <button
-            className='button'
-            onClick={addToCart}
-          >
-            add to cart
-          </button>
+          {inStock ? (
+            <button
+              className='button'
+              onClick={addToCart}
+            >
+              add to cart
+            </button>
+          ) : (
+            <button className='button dis'>add to cart</button>
+          )}
           <div>{parse(description)}</div>
         </div>
       </div>

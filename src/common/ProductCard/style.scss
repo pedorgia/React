@@ -1,63 +1,5 @@
-.clothes {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: relative;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-
-    img {
-        max-width: 200px;
-        max-height: 180px;
-        width: auto;
-        height: auto;
-    }
-}
-
-.categories_item {
-    position: relative;
-    font-family: 'Raleway';
-    padding-left: 15px;
-}
-
-.price {
-    font-weight: 550;
-}
-
-.out_of_stock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
 .disabled {
     opacity: 0.5;
-}
-
-.out_of_stock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 14px;
-    //font-weight: 400;
-    text-transform: uppercase;
-}
-
-// .description,
-// .price {
-//     padding-bottom: 3px;
-// }
-
-.buy_me_img {
-    position: absolute;
-    display: none;
-    z-index: 1;
-    bottom: 10px;
-    right: 10px;
 }
 
 .categories_item:hover {
@@ -68,3 +10,62 @@
 .categories_item:hover .buy_me_img {
     display: block;
 }
+
+.categories_item {
+    position: relative;
+    font-family: 'Raleway';
+    padding-left: 15px;
+
+    .buy_me_img {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .clothes {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        text-align: center;
+        width: 200px;
+        height: 180px;
+    
+        img {
+            max-width: 200px;
+            max-height: 180px;
+            width: auto;
+            height: auto;            
+        }
+
+        .out_of_stock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    
+    .price {
+        font-weight: 550;
+    }
+
+    .description,
+    .price {
+    padding-bottom: 10px;
+    }  
+}
+
+
+
+
+
+
+
+
+
+

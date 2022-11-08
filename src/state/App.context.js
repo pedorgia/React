@@ -79,6 +79,7 @@ export const AppProvider = ({ children }) => {
     allCurrencies,
     getProductPrice,
     userBag,
+    setUserBag,
     addProductToBag,
   };
 
