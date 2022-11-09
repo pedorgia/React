@@ -45,6 +45,12 @@
                 display: flex;
                 justify-content: space-between;
                 position: relative;
+                padding-bottom: 15px;
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                    border-bottom: 1px solid lightgray;
+                }
 
                 .bag_info {
                     display: flex;
@@ -56,7 +62,7 @@
                         background-color: #fff;
                         z-index: 2;
                         max-width: 200px;
-                        height: 300px;
+                        // height: 300px;
 
                         .product_price {
                             font-weight: bold;
