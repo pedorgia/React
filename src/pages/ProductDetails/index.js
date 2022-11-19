@@ -11,15 +11,15 @@ export const ProductDetails = () => {
   const { addProductToBag } = useContext(AppContext);
 
   const params = useParams();
-  const id = params.name;
+  const url_id = params.name;
 
   const { loading, data, error } = useQuery(GET_PRODUCT, {
     variables: {
-      id: `${id}`,
+      id: `${url_id}`,
     },
   });
 
-  const { attributes, brand, gallery, name, description, prices, inStock } =
+  const { attributes, brand, gallery, name, description, prices, inStock, id } =
     data ? data.product : [];
 
   const [imgIndex, setImgIndex] = useState(0);
@@ -56,6 +56,7 @@ export const ProductDetails = () => {
 
   const addToCart = () => {
     const newItem = {
+      id: id,
       gallery: gallery,
       brand: brand,
       name: name,

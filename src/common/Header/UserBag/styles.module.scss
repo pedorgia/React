@@ -3,8 +3,8 @@
 .basket {
     position: relative;
     z-index: 999;
-    
-    .basket_img{
+
+    .basket_img {
         background-color: white;
         border: none;
         position: relative;
@@ -21,18 +21,19 @@
             right: -10px;
         }
     }
+
     .bag {
         display: block;
         position: absolute;
         cursor: default;
-    
+
         right: 0;
         width: 365px;
         padding: 20px;
         border: 2px black solid;
         background-color: #fff;
 
-        .bag_header{
+        .bag_header {
             margin-bottom: $header-footer-margin;
         }
 
@@ -55,49 +56,24 @@
                 .bag_info {
                     display: flex;
                     justify-content: space-between;
-                    width: 200px;
+                    width: 220px;
                     padding-right: 10px;
 
                     .description {
                         background-color: #fff;
-                        z-index: 2;
-                        max-width: 200px;
-                        // height: 300px;
-
-                        .product_price {
-                            font-weight: bold;
-                        }
+                        max-width: 220px;
                     }
 
-                    .actions {
+                    .count_change {
+                        max-height: 150px;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        height: 150px;
-
-                        .remove_button, .add_button {
-                            height: $add-remove-button-size;
-                            width: $add-remove-button-size;
-                            background-color: white;
-                            border: 1px black solid;
-                            cursor: pointer;
-                        }
-
-                        .bag_count {
-                            margin-top: 10px;
-                            margin-bottom: 10px;
-                        }
                     }
                 }
+
                 .main_img {
                     padding-right: 15px;
-
-                    .product_img {
-                        max-height: 200px;
-                        max-width: 100px;
-                        height: auto;
-                        width: auto;
-                    }
                 }
             }
         }
@@ -111,30 +87,31 @@
                 justify-content: space-between;
             }
 
-            .action_button{
+            .action_button {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                
 
-                .view_bag, .checkout {
+
+                .view_bag,
+                .checkout {
                     text-transform: uppercase;
                     cursor: pointer;
                     height: 25px;
                     width: 110px;
                     margin: 5px;
                 }
-                
+
                 .view_bag {
                     border: 1px solid black;
                     color: black;
                     background-color: white;
                 }
-                
+
                 .checkout {
                     border: none;
                     color: white;
-                    background-color:#5ECE7B;
+                    background-color: #5ECE7B;
                 }
             }
         }

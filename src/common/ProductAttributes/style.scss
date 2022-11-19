@@ -1,5 +1,6 @@
 .attr_m {
     margin-top: 35px;
+
     p {
         text-transform: uppercase;
         font-size: 16px;
@@ -20,18 +21,19 @@
         display: flex;
     }
 
-    .color_medium, .attr_medium, .attr_m {
-        cursor: pointer;
-    }
-    
-    .color_small, .attr_small, .attr_s {
-        cursor: auto;
-    }
+    // .color_medium, .attr_medium, .attr_m {
+    //     cursor: pointer;
+    // }
+
+    // .color_small, .attr_small, .attr_s {
+    //     cursor: auto;
+    // }
 
     .color_small {
         width: 15px;
         height: 15px;
     }
+
     .color_medium {
         width: 35px;
         height: 35px;
@@ -52,33 +54,20 @@
         border: black 1px solid;
         margin-right: 5px;
     }
-    
+
     .color_selected {
         border: purple 3px solid;
     }
-    
+
     .attr_rect {
         border: black 1px solid;
         background-color: white;
         text-align: center;
         margin-right: 5px;
     }
-    
+
     .attr_selected {
         background-color: #1D1F22;
         color: white;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

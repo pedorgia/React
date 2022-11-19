@@ -1,0 +1,37 @@
+// .m_max_height {
+//     max-height: 360px;
+// }
+
+// .s_max_height {
+//     max-height: 150px;
+// }
+
+// .actions {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+
+.m_button_size {
+    height: 35px;
+    width: 35px;
+}
+
+.s_button_size {
+    height: 15px;
+    width: 15px;
+}
+
+.remove_button,
+.add_button {
+    background-color: white;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+.bag_count {
+    //margin-top: 10px;
+    //margin-bottom: 10px;
+    text-align: center;
+}
+
+// }

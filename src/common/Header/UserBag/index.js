@@ -5,9 +5,12 @@ import { ProductAttributes } from '../../ProductAttributes';
 import { useOnClickOutside } from '../../Hooks/clickOutside';
 import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { ProductDescription } from '../../ProductDescription';
+import { ProductCountChange } from '../../ProductCountChange';
+import { ProductGallery } from '../../ProductGallery';
 
 export const UserBag = () => {
-  const { userBag, setUserBag, getProductPrice } = useContext(AppContext);
+  const { userBag, getProductPrice, currentCurrency } = useContext(AppContext);
 
   const [isBagOpened, setIsBagOpened] = useState(false);
   const ref = useRef();
@@ -26,28 +29,13 @@ export const UserBag = () => {
     }, 0);
   }, [userBag, getProductPrice]);
 
-  const addProductCount = (item) => {
-    const copy = [...userBag];
-    const myItem = copy.find((product) => product === item);
-    myItem.count += 1;
-    setUserBag(copy);
-  };
-
-  const removeProductCount = (item) => {
-    let copy = [...userBag];
-    const myItem = copy.find((product) => product === item);
-    if (myItem.count === 1) {
-      copy = copy.filter((x) => x !== myItem);
-    } else {
-      myItem.count -= 1;
-    }
-    setUserBag(copy);
-  };
-
+  const type = 'small';
+  const symbol = currentCurrency.symbol;
   const navigate = useNavigate();
 
   const viewBag = () => {
     navigate('/cart');
+    setIsBagOpened(false);
   };
 
   useOnClickOutside(ref, () => setIsBagOpened(false));
@@ -78,43 +66,34 @@ export const UserBag = () => {
               </div>
               <div className={styles.bag_items}>
                 {userBag.map((item) => (
-                  <div className={styles.one_product}>
+                  <div
+                    key={item.id}
+                    className={styles.one_product}
+                  >
                     <div className={styles.bag_info}>
                       <div className={styles.description}>
-                        <p> {item.brand} </p>
-                        <p> {item.name} </p>
-                        <p className={styles.product_price}>
-                          {getProductPrice(item).amount}
-                          {getProductPrice(item).symbol}
-                        </p>
-
+                        <ProductDescription
+                          item={item}
+                          type={type}
+                        />
                         <ProductAttributes
                           attributes={item.allAttributes}
                           selectedAttributes={item.attributes}
-                          type='Small'
+                          disabled={true}
+                          type={type}
                         />
                       </div>
-                      <div className={styles.actions}>
-                        <button
-                          className={styles.add_button}
-                          onClick={() => addProductCount(item)}
-                        >
-                          +
-                        </button>
-                        <div className={styles.bag_count}> {item.count}</div>
-                        <button
-                          className={styles.remove_button}
-                          onClick={() => removeProductCount(item)}
-                        >
-                          -
-                        </button>
+                      <div className={styles.count_change}>
+                        <ProductCountChange
+                          item={item}
+                          type={type}
+                        />
                       </div>
                     </div>
                     <div className={styles.main_img}>
-                      <img
-                        className={styles.product_img}
-                        src={item.gallery[0]}
-                        alt='product'
+                      <ProductGallery
+                        item={item}
+                        type={type}
                       />
                     </div>
                   </div>
@@ -124,7 +103,10 @@ export const UserBag = () => {
               <div className={styles.bag_footer}>
                 <div className={styles.total_price}>
                   <h3>Total </h3>
-                  <h3>{totalPrice}</h3>
+                  <h3>
+                    {symbol}
+                    {totalPrice}
+                  </h3>
                 </div>
                 <div className={styles.action_button}>
                   <button

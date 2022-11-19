@@ -1,0 +1,36 @@
+.m_product_img_max_sizes {
+    max-height: 300px;
+    max-width: 200px;
+}
+
+.s_product_img_max_sizes {
+    max-height: 200px;
+    max-width: 100px;
+}
+
+.product_img {
+    height: auto;
+    width: auto;
+}
+
+.img_buttons {
+    display: flex;
+    z-index: 900;
+    position: absolute;
+    right: 0;
+
+    button {
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        height: 24px;
+        width: 24px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.73);
+        border: none;
+        cursor: pointer;
+
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+}

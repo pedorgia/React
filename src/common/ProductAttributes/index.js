@@ -7,6 +7,7 @@ export const ProductAttributes = ({
   selectedAttributes,
   onSelectAttribute,
   type = AttributeSizes.Medium,
+  disabled = false,
 }) => {
   const isSelected = (item, attrId) => {
     const attrType = type === AttributeSizes.Medium ? 'medium' : 'small';
@@ -18,38 +19,46 @@ export const ProductAttributes = ({
       : `${attrName}_${attrType} ${attrName}_rect`;
   };
 
+  const cursor_class = disabled ? 'default' : 'pointer';
+
   return (
     <div className={type === AttributeSizes.Medium ? 'attr_m' : 'attr_s'}>
-      {attributes.map((attr, index) => {
+      {attributes.map((attr) => {
         return (
-          <>
-            <div
-              key={index}
-              className='attr_item'
-            >
-              <p> {attr.id} </p>
-              <div className='attr_block'>
-                {attr.items.map((item, index) => (
-                  <>
-                    {attr.id === 'Color' ? (
-                      <button
-                        className={isSelected(item, attr.id)}
-                        style={{ backgroundColor: item.value }}
-                        onClick={() => onSelectAttribute(item, attr.id)}
-                      />
-                    ) : (
-                      <button
-                        className={isSelected(item, attr.id)}
-                        onClick={() => onSelectAttribute(item, attr.id)}
-                      >
-                        {item.value}
-                      </button>
-                    )}
-                  </>
-                ))}
-              </div>
+          <div
+            key={attr.id}
+            className='attr_item'
+          >
+            <p> {attr.id} </p>
+            <div className='attr_block'>
+              {attr.items.map((item, index) => (
+                <span key={item.id}>
+                  {attr.id === 'Color' ? (
+                    <button
+                      className={isSelected(item, attr.id)}
+                      style={{
+                        backgroundColor: item.value,
+                        cursor: cursor_class,
+                      }}
+                      onClick={() =>
+                        disabled ? null : onSelectAttribute(item, attr.id)
+                      }
+                    />
+                  ) : (
+                    <button
+                      className={isSelected(item, attr.id)}
+                      style={{ cursor: cursor_class }}
+                      onClick={() =>
+                        disabled ? null : onSelectAttribute(item, attr.id)
+                      }
+                    >
+                      {item.value}
+                    </button>
+                  )}
+                </span>
+              ))}
             </div>
-          </>
+          </div>
         );
       })}
     </div>
